@@ -10,9 +10,7 @@
 
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        zola = "${pkgs.zola}/bin/zola";
+      let pkgs = nixpkgs.legacyPackages.${system};
       in rec {
         apps = {
           build = flake-utils.lib.mkApp {
