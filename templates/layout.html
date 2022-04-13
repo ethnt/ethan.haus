@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="{{ config.description }}">
+
+    <title>{% if section.page_title %}{{ section.page_title }} &mdash; {% endif %}{{ config.title }}</title>
+
+    <link rel="stylesheet" href="{{ get_url(path="application.css") }}" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <aside class="header__name">
+          <h1 class="header__logo"><a href="{{ get_url(path="@/_index.md") }}">{{ config.title }}</a></h1>
+        </aside>
+        <nav class="header__nav nav">
+          <!-- <ul>
+            <li class="nav__item"><a href="#">Commonplace</a></li>
+            <li class="nav__item"><a href="#">Links</a></li>
+            <li class="nav__item"><a href="#">Contact</a></li>
+          </ul> -->
+        </nav>
+      </header>
+      <main class="main">
+        {% block content %}{% endblock content %}
+      </main>
+      <footer class="footer">
+        <aside class="footer__copyright">
+          <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}</p>
+        </aside>
+        <nav class="footer__nav nav">
+          <ul>
+            <li class="nav__item"><a href="https://twitter.com/ethnt">Twitter</a></li>
+            <li class="nav__item"><a href="https://linkedin.com/in/ethan-turkeltaub-592122a3">LinkedIn</a></li>
+            <li class="nav__item"><a href="https://github.com/ethnt">GitHub</a></li>
+            <li class="nav__item"><a href="mailto:ethan@ethan.haus">Email</a></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+  </body>
+
+</html>

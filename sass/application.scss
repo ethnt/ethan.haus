@@ -1,0 +1,82 @@
+@import "reset";
+@import "fonts";
+@import "header";
+@import "avatar";
+@import "footer";
+
+:root {
+  --color--background: #fcf6f5;
+  --color--background--darker: #f0d3ce;
+  --color--background--darkest: #e4afa7;
+  --color--text: #003807;
+
+  --font-family--primary: "GT Alpina", Times New Roman, Times, serif;
+  --font-family--secondary: "GT America", Times New Roman, Times, serif;
+  --font-family--mono: "GT Alpina Typewriter", Times New Roman, Times, serif;
+
+  --font-size--base: 20px;
+  --font-weight--light: 300;
+  --font-weight--regular: 400;
+  --font-weight--semibold: 500;
+  --font-weight--bold: 600;
+
+  --line-height--base: 1.75em;
+}
+
+body {
+  background: var(--color--background);
+  color: var(--color--text);
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size--base);
+  font-weight: var(--font-weight--regular);
+  line-height: var(--line-height--base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  display: inline;
+  background-image: linear-gradient(var(--color--background),
+      var(--color--background)),
+    linear-gradient(var(--color--background), var(--color--background)),
+    linear-gradient(var(--color--background--darker),
+      var(--color--background--darker));
+  background-size: 0.1em 0.01em, 0.1em 0.07em, 0.07em 0.07em;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position-y: 98%, 98%, 98%;
+  background-position-x: 0%, 100%, 0%;
+  color: var(--color-text);
+  opacity: 0.8;
+  text-decoration: none;
+  text-shadow: 0.1em 0em var(--color--background),
+    0.1em 0.02em var(--color--background), 0.1em 0.04em var(--color--background),
+    -0.1em 0.06em var(--color--background),
+    -0.1em 0.04em var(--color--background),
+    -0.1em 0.02em var(--color--background), -0.1em 0em var(--color--background),
+    0.1em -0.02em var(--color--background);
+}
+
+a:hover {
+  background-image: linear-gradient(var(--color--background),
+      var(--color--background)),
+    linear-gradient(var(--color--background), var(--color--background)),
+    linear-gradient(var(--color--background--darkest),
+      var(--color--background--darkest));
+  opacity: 1;
+}
+
+.page {
+  max-width: 960px;
+  /* padding: 6em;
+  flex-direction: column;
+  min-height: 100vh; */
+  /* padding: 6em 6em 2em 6em; */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  margin-left: 6em;
+}

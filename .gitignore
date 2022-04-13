@@ -1,0 +1,5 @@
+/.direnv/
+/public/
+/static/fonts/
+
+.DS_Store

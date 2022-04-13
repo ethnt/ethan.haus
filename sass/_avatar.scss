@@ -1,0 +1,20 @@
+.avatar {
+  background-image: url("/img/beach.jpg");
+  background-color: #ba4a38;
+  background-size: cover;
+  background-blend-mode: screen;
+  border-radius: 50%;
+  display: inline;
+  float: right;
+  margin-left: 3rem;
+  max-width: 20%;
+  position: relative;
+  width: 100%;
+}
+
+.avatar:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
