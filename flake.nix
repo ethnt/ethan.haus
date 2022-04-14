@@ -45,11 +45,12 @@
         devShell = pkgs.mkShell { buildInputs = with pkgs; [ zola ]; };
 
         checks = {
-          site = pkgs.runCommand "check" { } ''
-            cd ${self}
-            ${pkgs.zola}/bin/zola check
-            mkdir $out
-          '';
+          # # Broken due to DNS resolution issues (see https://github.com/ethnt/ethan.haus/issues/1)
+          # site = pkgs.runCommand "check" { } ''
+          #   cd ${self}
+          #   ${pkgs.zola}/bin/zola check
+          #   mkdir $out
+          # '';
         };
       });
 }
