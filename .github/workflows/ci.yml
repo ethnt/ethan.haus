@@ -1,0 +1,10 @@
+name: "Check"
+on:
+  push:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: cachix/install-nix-action@v16
+      - run: nix -Lv flake check --show-trace
