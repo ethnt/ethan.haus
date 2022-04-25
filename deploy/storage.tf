@@ -52,14 +52,14 @@ resource "aws_s3_bucket_policy" "files_policy" {
   EOF
 }
 
-resource "aws_s3_bucket_cors_configuration" "files_cors" {
-  bucket = aws_s3_bucket.files.bucket
+# resource "aws_s3_bucket_cors_configuration" "files_cors" {
+#   bucket = aws_s3_bucket.files.bucket
 
-  cors_rule {
-    allowed_methods = ["GET"]
-    allowed_origins = ["*"]
-  }
-}
+#   cors_rule {
+#     allowed_methods = [ "GET" ]
+#     allowed_origins = [ "*" ]
+#   }
+# }
 
 resource "aws_s3_bucket_website_configuration" "files" {
   bucket = aws_s3_bucket.files.bucket

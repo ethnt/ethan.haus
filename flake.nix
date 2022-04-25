@@ -38,6 +38,16 @@
               ${pkgs.zola}/bin/zola serve
             '';
           };
+
+          deploy = flake-utils.lib.mkApp {
+            drv = let build = self.packages.${system}.build;
+            in pkgs.writeShellScriptBin "deploy" ''
+              export AWS_ACCESS_KEY_ID=$(${pkgs.sops}/bin/sops -d --extract '["aws_access_key_id"]' ./secrets.yaml)
+              export AWS_SECRET_ACCESS_KEY=$(${pkgs.sops}/bin/sops -d --extract '["aws_secret_access_key"]' ./secrets.yaml)
+
+              ${pkgs.awscli}/bin/aws s3 sync ${build} s3://ethan.haus
+            '';
+          };
         };
 
         defaultApp = apps.server;
@@ -58,12 +68,6 @@
           #   ${pkgs.zola}/bin/zola check
           #   mkdir $out
           # '';
-
-          terraform = pkgs.runCommand "terraform" { } ''
-            cd ${self}
-            ${pkgs.terraform}/bin/terraform -chdir=deploy/ validate
-            mkdir $out
-          '';
         };
       });
 }
