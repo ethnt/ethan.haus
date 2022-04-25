@@ -42,7 +42,14 @@
 
         defaultApp = apps.server;
 
-        devShell = pkgs.mkShell { buildInputs = with pkgs; [ zola ]; };
+        devShell = pkgs.mkShell {
+          buildInputs = with pkgs; [ sops terraform zola ];
+
+          shellHook = ''
+            export AWS_ACCESS_KEY_ID=$(sops -d --extract '["aws_access_key_id"]' ./secrets.yaml)
+            export AWS_SECRET_ACCESS_KEY=$(sops -d --extract '["aws_secret_access_key"]' ./secrets.yaml)
+          '';
+        };
 
         checks = {
           # # Broken due to DNS resolution issues (see https://github.com/ethnt/ethan.haus/issues/1)
