@@ -58,6 +58,12 @@
           #   ${pkgs.zola}/bin/zola check
           #   mkdir $out
           # '';
+
+          terraform = pkgs.runCommand "terraform" { } ''
+            cd ${self}
+            ${pkgs.terraform}/bin/terraform -chdir=deploy/ validate
+            mkdir $out
+          '';
         };
       });
 }

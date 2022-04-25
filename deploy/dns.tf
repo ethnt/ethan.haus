@@ -19,26 +19,26 @@ resource "aws_route53_record" "certificate_validation" {
   zone_id = aws_route53_zone.primary.zone_id
 }
 
-resource "aws_route53_record" "primary" {
+resource "aws_route53_record" "site" {
   zone_id = aws_route53_zone.primary.zone_id
   name = var.domain
   type = "A"
 
   alias {
-    name = aws_cloudfront_distribution.primary_distribution.domain_name
-    zone_id = aws_cloudfront_distribution.primary_distribution.hosted_zone_id
+    name = aws_cloudfront_distribution.site_distribution.domain_name
+    zone_id = aws_cloudfront_distribution.site_distribution.hosted_zone_id
     evaluate_target_health = false
   }
 }
 
-resource "aws_route53_record" "assets" {
+resource "aws_route53_record" "files" {
   zone_id = aws_route53_zone.primary.zone_id
-  name = "assets.${var.domain}"
+  name = var.files_domain
   type = "A"
 
   alias {
-    name = aws_cloudfront_distribution.assets_distribution.domain_name
-    zone_id = aws_cloudfront_distribution.assets_distribution.hosted_zone_id
+    name = aws_cloudfront_distribution.files_distribution.domain_name
+    zone_id = aws_cloudfront_distribution.files_distribution.hosted_zone_id
     evaluate_target_health = false
   }
 }

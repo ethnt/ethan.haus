@@ -1,7 +1,7 @@
-resource "aws_cloudfront_distribution" "primary_distribution" {
+resource "aws_cloudfront_distribution" "site_distribution" {
   origin {
     origin_id = var.domain
-    domain_name = aws_s3_bucket.primary.bucket_domain_name
+    domain_name = aws_s3_bucket.site.bucket_domain_name
   }
 
   aliases = [ var.domain ]
@@ -44,13 +44,13 @@ resource "aws_cloudfront_distribution" "primary_distribution" {
   }
 }
 
-resource "aws_cloudfront_distribution" "assets_distribution" {
+resource "aws_cloudfront_distribution" "files_distribution" {
   origin {
-    origin_id = "assets.${var.domain}"
-    domain_name = aws_s3_bucket.assets.bucket_domain_name
+    origin_id = var.files_domain
+    domain_name = aws_s3_bucket.files.bucket_domain_name
   }
 
-  aliases = [ "assets.${var.domain}" ]
+  aliases = [ var.files_domain ]
 
   enabled = true
   is_ipv6_enabled = true
@@ -59,8 +59,8 @@ resource "aws_cloudfront_distribution" "assets_distribution" {
   default_cache_behavior {
     allowed_methods = [ "GET", "HEAD", "OPTIONS" ]
     cached_methods = [ "GET", "HEAD" ]
-    target_origin_id = "assets.${var.domain}"
-    response_headers_policy_id = aws_cloudfront_response_headers_policy.assets_response_policy.id
+    target_origin_id = var.files_domain
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.files_response_policy.id
 
     forwarded_values {
       query_string = true
@@ -91,8 +91,8 @@ resource "aws_cloudfront_distribution" "assets_distribution" {
   }
 }
 
-resource "aws_cloudfront_response_headers_policy" "assets_response_policy" {
-  name = "assets-response-policy"
+resource "aws_cloudfront_response_headers_policy" "files_response_policy" {
+  name = "files-response-policy"
 
   cors_config {
     access_control_allow_credentials = false

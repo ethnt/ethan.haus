@@ -2,12 +2,6 @@
 provider "aws" {
   alias = "acm"
   region = "us-east-1"
-
-  default_tags {
-    tags = {
-      Project = "ethan.haus"
-    }
-  }
 }
 
 resource "aws_acm_certificate" "certificate" {
