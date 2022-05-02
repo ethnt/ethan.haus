@@ -2,7 +2,7 @@
 base_url = "https://ethan.haus"
 
 title = "Ethan Turkeltaub"
-description = "Ethan Turkeltaub's personal website"
+description = "Brooklyn-based software engineer working at Stripe"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -16,4 +16,8 @@ build_search_index = false
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+socials = [
+  {name = "GitHub", link = "https://github.com/ethnt"},
+  {name = "LinkedIn", link = "https://www.linkedin.com/in/ethan-turkeltaub-592122a3/"},
+  {name = "Twitter", link = "https://twitter.com/ethnt"}
+]

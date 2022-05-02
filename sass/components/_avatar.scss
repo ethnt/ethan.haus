@@ -7,9 +7,15 @@
   display: inline;
   float: right;
   margin-left: 3rem;
+  margin-bottom: 1em;
   max-width: 20%;
   position: relative;
   width: 100%;
+
+  @media (max-width: 760px) {
+    max-width: 40%;
+    margin-left: 1rem;
+  }
 }
 
 .avatar:before {

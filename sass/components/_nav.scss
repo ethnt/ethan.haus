@@ -1,0 +1,13 @@
+.nav {
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
+
+    & + li {
+      margin-left: var(--spacing-s);
+    }
+  }
+}

@@ -1,7 +1,52 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <span class="avatar"></span>
+  <p class="avatar"></p>
 
   {{ section.content | safe }}
+
+  <div class="cv">
+    <section>
+      <h2>CV</h2>
+      <article>
+        <h3><a href="https://stripe.com">Stripe</a></h3>
+        <p class="cv__dates">Jan. 2021 &ndash; now</p>
+      </article>
+      <article>
+        <h3><a href="https://enlitic.com">Enlitic</a></h3>
+        <p class="cv__dates">Mar. 2020 &ndash; Jan. 2021</p>
+      </article>
+      <article>
+        <h3><a href="https://aircall.io">Aircall</a></h3>
+        <p class="cv__dates">Apr. 2018 &ndash; Feb. 2020</p>
+      </article>
+      <article>
+        <h3><a href="https://oak.is">Oak</a></h3>
+        <p class="cv__dates">Jun. 2015 &ndash; Apr. 2018</p>
+      </article>
+      <article>
+        <h3><a href="https://steamboatvc.com/portfolio/fanzter/">Fanzter</a></h3>
+        <p class="cv__dates">Jun. 2012 &ndash; Sept. 2014</p>
+      </article>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <article>
+        <h3><a href="https://github.com/ethnt/tilde">Tilde</a></h3>
+        <p>Reproducible developer environments</p>
+      </article>
+      <article>
+        <h3><a href="https://github.com/ethnt/orchard">Orchard</a></h3>
+        <p>Homelab with NixOS</p>
+      </article>
+      <article>
+        <h3><a href="https://github.com/ethnt/copilot">Copilot</a></h3>
+        <p>Travel assistant</p>
+      </article>
+      <article>
+        <h3><a href="https://github.com/ethnt/juniper">Juniper</a></h3>
+        <p>Next-generation Ruby web framework</p>
+      </article>
+    </section>
+  </div>
 {% endblock content %}
