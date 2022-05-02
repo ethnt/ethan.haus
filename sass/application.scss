@@ -1,8 +1,12 @@
-@import "reset";
-@import "fonts";
-@import "header";
-@import "avatar";
-@import "footer";
+@import "basics/reset";
+@import "basics/fonts";
+
+@import "components/avatar";
+@import "components/nav";
+@import "components/cv";
+
+@import "sections/header";
+@import "sections/footer";
 
 :root {
   --color--background: #fcf6f5;
@@ -15,23 +19,47 @@
   --font-family--mono: "GT Alpina Typewriter", Times New Roman, Times, serif;
 
   --font-size--base: 20px;
+  --font-size--small: 16px;
   --font-weight--light: 300;
   --font-weight--regular: 400;
   --font-weight--semibold: 500;
   --font-weight--bold: 600;
 
-  --line-height--base: 1.75em;
+  --line-height--base: 1.75;
+
+  --spacing: 1.5em;
+  --spacing-s: calc(0.5 * var(--spacing));
+  --spacing-m: var(--spacing);
+  --spacing-l: calc(1.5 * var(--spacing));
+  --spacing-xl: calc(2.5 * var(--spacing));
+  --spacing-xxl: calc(5 * var(--spacing));
+  --spacing-col: calc(6 * var(--spacing));
+  --spacing-width-max: 42rem;
+  --spacing-width-tiny: 20rem;
+  --spacing-width-xl: 52rem;
+
+  --breakpoint: 1024px;
 }
 
-body {
+html {
   background: var(--color--background);
   color: var(--color--text);
   font-family: var(--font-family--primary);
   font-size: var(--font-size--base);
   font-weight: var(--font-weight--regular);
-  line-height: var(--line-height--base);
+  font-feature-settings: "onum" 1, "liga" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0 var(--spacing-m);
+}
+
+body {
+  margin: 0 auto;
+  line-height: var(--line-height--base);
+  max-width: var(--spacing-width-max);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -65,18 +93,16 @@ a:hover {
   opacity: 1;
 }
 
-.page {
-  max-width: 960px;
-  /* padding: 6em;
-  flex-direction: column;
-  min-height: 100vh; */
-  /* padding: 6em 6em 2em 6em; */
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
 .main {
   flex: 1;
-  margin-left: 6em;
+}
+
+h2 {
+  margin-top: var(--spacing-l);
+  margin-bottom: var(--spacing-s);
+  font-weight: bold;
+}
+
+p + p {
+  margin-top: var(--spacing-s);
 }
