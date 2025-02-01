@@ -1,0 +1,12 @@
+name: Setup
+description: Sets up the workflow
+runs:
+  using: composite
+  steps:
+    - uses: DeterminateSystems/nix-installer-action@main
+      with:
+        extra-conf: |
+          system-features = big-parallel
+          accept-flake-config = true
+    - run: nix develop --impure --command bash -c "pnpm install --frozen-lockfile"
+      shell: bash
