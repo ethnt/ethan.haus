@@ -1,13 +1,13 @@
 {
   "name": "ethan.haus",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "prettier --check . && eslint .",
+    "lint": "prettier --check . && eslint . && tf fmt -check",
     "format": "prettier --write ."
   },
   "dependencies": {
