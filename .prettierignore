@@ -1,2 +1,5 @@
 flake.lock
 pnpm-lock.yaml
+secrets.yaml
+.sops.yaml
+deploy/.terraform/

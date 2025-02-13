@@ -1,0 +1,8 @@
+keys:
+  - &user_ethnt age10539mc6shf02hpa8huyjktdw3nfyavxdg8pt247wwvq4xrv8h5zs8nc0k0
+
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+      - age:
+        - *user_ethnt
