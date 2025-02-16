@@ -8,7 +8,7 @@ resource "vercel_project" "ethan_haus" {
   }
 
   git_comments = {
-    on_commit = false
+    on_commit       = false
     on_pull_request = false
   }
 
