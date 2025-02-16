@@ -32,8 +32,7 @@
           enterShell = ''
             export SOPS_AGE_KEY_FILE="/Users/$USER/.config/sops/age/keys.txt"
 
-            export RENDER_API_KEY=$(sops -d --extract '["RENDER_API_KEY"]' ./secrets.yaml)
-            export RENDER_OWNER_ID=$(sops -d --extract '["RENDER_OWNER_ID"]' ./secrets.yaml)
+            export VERCEL_API_TOKEN=$(sops -d --extract '["VERCEL_API_TOKEN"]' ./secrets.yaml)
           '';
         };
       };
