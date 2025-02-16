@@ -1,5 +1,5 @@
 resource "vercel_project" "ethan_haus" {
-  name = "ethan-haus"
+  name      = "ethan-haus"
   framework = "astro"
 
   git_repository = {
