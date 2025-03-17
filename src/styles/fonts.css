@@ -2,22 +2,3 @@
   font-family: "Brunswick Grotesque";
   src: url("/fonts/brunswick-grotesque/BrunswickGrotesque-Regular.woff2") format("woff2");
 }
-
-@font-face {
-  font-family: "Univers Selectric UN-11";
-  src: url("/fonts/un-11/UN-11STTrial-Regular.woff2") format("woff2");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Univers Selectric UN-11";
-  src: url("/fonts/un-11/UN-11STTrial-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Univers Selectric UN-11";
-  src: url("/fonts/un-11/UN-11STTrial-Bold.woff2") format("woff2");
-  font-weight: 600;
-}

@@ -1,3 +1,3 @@
 I'm a Brooklyn-based software engineer working on web products with Ruby, TypeScript, and Elixir. I've been working on the web for over a decade in a variety of industries, most recently at [Stripe](https://stripe.com) on the Web Presence & Platform team. Previously, I've worked at companies in [artificial intelligence](https://enlitic.com), [telecommunications](https://aircall.io), and [design](https://oak.is), as well as doing freelance work in healthcare, real estate, and travel.
 
-I am currently available for freelance opportunities -- if you have an interesting project that you need help with, feel free to [reach out](mailto:work@turkeltaub.dev)!
+I am currently available for freelance opportunities -- if you have an interesting project that you need engineering help with, feel free to [reach out](mailto:work@turkeltaub.dev)!
