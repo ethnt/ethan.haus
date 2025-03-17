@@ -1,0 +1,67 @@
+---
+export interface NavLink {
+  name: string;
+  url: string;
+  active?: boolean;
+}
+
+interface Props {
+  links: NavLink[];
+}
+
+const { links } = Astro.props;
+---
+
+<header>
+  <aside>
+    <h1><a href="/">Ethan Turkeltaub</a></h1>
+  </aside>
+  <nav>
+    <ul>
+      {
+        links.map((link) => (
+          <li class:list={[{ active: link.active }]}>
+            <a href={link.url}>{link.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style scoped>
+  header {
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  h1 a {
+    border: none;
+  }
+
+  li {
+    display: inline-block;
+
+    a {
+      border: none;
+      color: var(--color--text--light);
+
+      &:hover {
+        color: var(--color--text);
+      }
+    }
+
+    .active a {
+      color: var(--color--text);
+    }
+
+    & + li {
+      &:before {
+        content: "\2022";
+        color: var(--color--text--light);
+        padding-left: 5px;
+      }
+    }
+  }
+</style>

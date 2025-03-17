@@ -1,0 +1,40 @@
+---
+import jpg from "../assets/img/beach.jpg";
+
+const style = `
+  background-image: url(${jpg.src});
+  background-image: image-set(
+    "${jpg.src}" type("image/jpeg")
+  );
+`;
+---
+
+<p class="avatar" style={style}></p>
+
+<style lang="scss">
+  .avatar {
+    background-color: #ba4a38;
+    background-size: cover;
+    background-blend-mode: screen;
+    border-radius: 50%;
+    display: inline;
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 1em;
+    max-width: 30%;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: 760px) {
+      max-width: 40%;
+      margin-left: 1rem;
+    }
+  }
+
+  .avatar:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+  }
+</style>

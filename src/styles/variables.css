@@ -1,0 +1,32 @@
+:root {
+  --spacing: 1.5em;
+  --spacing-s: calc(0.5 * var(--spacing));
+  --spacing-m: var(--spacing);
+  --spacing-l: calc(1.5 * var(--spacing));
+  --spacing-xl: calc(2.5 * var(--spacing));
+  --spacing-xxl: calc(5 * var(--spacing));
+  --spacing-col: calc(6 * var(--spacing));
+  --spacing-width-max: 42rem;
+  --spacing-width-tiny: 20rem;
+  --spacing-width-xl: 52rem;
+
+  --breakpoint: 1024px;
+
+  --font-family--sans-serif: "Brunswick Grotesque", Helvetica, Arial, sans-serif;
+  /* --font-family--sans-serif: "Univers Selectric UN-11", Helvetica, Arial, sans-serif; */
+
+  --font-size--base: 16px;
+  --font-size--small: 14px;
+  --font-size--larger: 20px;
+  --font-weight--light: 300;
+  --font-weight--regular: 400;
+  --font-weight--semibold: 500;
+  --font-weight--bold: 600;
+
+  --line-height--base: 1.75;
+
+  --color--background: #f8f7f4;
+  --color--text: #3c3b43;
+  --color--text--light: #8a8a8a;
+  --color--text--lighter: #bfbfbf;
+}

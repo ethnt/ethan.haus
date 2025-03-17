@@ -1,0 +1,28 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<section>
+  <aside>
+    <h2>{name}</h2>
+  </aside>
+  <div>
+    <slot />
+  </div>
+</section>
+
+<style scoped>
+  section {
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    margin-top: var(--spacing-xl);
+  }
+
+  section aside h2 {
+    color: var(--color--text--light);
+  }
+</style>
