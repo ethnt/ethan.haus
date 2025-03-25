@@ -1,0 +1,14 @@
+[
+  {
+    "id": "tilde",
+    "name": "Tilde",
+    "description": "Nix-based reproducible developer environments",
+    "url": "https://github.com/ethnt/tilde"
+  },
+  {
+    "id": "e10",
+    "name": "E10",
+    "description": "Homelab with Terraform and NixOS",
+    "url": "https://github.com/ethnt/e10"
+  }
+]

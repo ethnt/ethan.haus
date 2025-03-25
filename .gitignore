@@ -28,3 +28,9 @@ pnpm-debug.log*
 
 # devenv
 .devenv/
+
+# vercel
+.vercel/
+
+# NixOS
+result

@@ -1,0 +1,42 @@
+:root {
+  --spacing: 1.5em;
+  --spacing-s: calc(0.5 * var(--spacing));
+  --spacing-m: var(--spacing);
+  --spacing-l: calc(1.5 * var(--spacing));
+  --spacing-xl: calc(2.5 * var(--spacing));
+  --spacing-xxl: calc(5 * var(--spacing));
+
+  /* Breakpoints */
+  --max-width: 960px;
+
+  /* Font families */
+  --font-family--sans-serif: "ROM", helvetica, arial, sans-serif;
+  --font-family--monospace: "ROM Mono", helvetica, arial, sans-serif;
+
+  /* Font sizes */
+  --font-size--base: 16px;
+  --font-size--small: 14px;
+  --font-size--larger: 20px;
+  --font-weight--light: 300;
+  --font-weight--regular: 400;
+  --font-weight--semibold: 500;
+  --font-weight--bold: 600;
+
+  /* Line heights */
+  --line-height--base: 1.75;
+
+  /* Colors */
+  --color--background--html: #ececec;
+  --color--background--body: #f6f6f6;
+  --color--text: #3c3b43;
+  --color--text--light: #8a8a8a;
+  --color--text--lighter: #bfbfbf;
+  --color--avatar: #ba4a38;
+
+  @media (prefers-color-scheme: dark) {
+    --color--background--html: #100f11;
+    --color--background--body: #222125;
+    --color--text: #ececec;
+    --color--avatar: #484ab3;
+  }
+}

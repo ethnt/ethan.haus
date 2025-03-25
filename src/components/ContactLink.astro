@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  contact_link: CollectionEntry<"contact_links">;
+}
+
+const { contact_link } = Astro.props;
+
+const { label, url, text } = contact_link.data;
+---
+
+<article>
+  <aside>
+    <h3>{label}</h3>
+  </aside>
+  <section>
+    <p><a href={url} target="_blank">{text}</a></p>
+  </section>
+</article>
+
+<style scoped>
+  article {
+    display: grid;
+    grid-column: span 24 / span 1;
+    grid-template-columns: 6fr 18fr;
+  }
+
+  section {
+    font-family: var(--font-family--monospace);
+  }
+
+  h3 {
+    color: var(--color--text--light);
+  }
+</style>

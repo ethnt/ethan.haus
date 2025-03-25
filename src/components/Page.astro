@@ -1,0 +1,14 @@
+<div id="page">
+  <slot />
+</div>
+
+<style>
+  #page {
+    display: grid;
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-l);
+    row-gap: var(--spacing-xl);
+  }
+</style>

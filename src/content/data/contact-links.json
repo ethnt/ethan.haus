@@ -1,0 +1,26 @@
+[
+  {
+    "id": "email",
+    "label": "Email",
+    "url": "mailto:ethan@turkeltaub.me",
+    "text": "ethan@turkeltaub.me"
+  },
+  {
+    "id": "github",
+    "label": "GitHub",
+    "url": "https://github.com/ethnt",
+    "text": "ethnt"
+  },
+  {
+    "id": "bluesky",
+    "label": "Bluesky",
+    "url": "https://bsky.app/profile/ethan.haus",
+    "text": "ethan.haus"
+  },
+  {
+    "id": "linkedin",
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/ethnt/",
+    "text": "ethnt"
+  }
+]

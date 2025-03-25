@@ -1,0 +1,40 @@
+---
+import type { CVItem } from "../content.config";
+
+interface Props {
+  item: CVItem;
+}
+
+const {
+  item: { name, description, url, start_date, end_date },
+} = Astro.props;
+
+const formatDate = (date: Date | null) => {
+  return date ? date.getFullYear() : "";
+};
+---
+
+<article>
+  <h3><a href={url}>{name}</a></h3>
+  <p>{description}</p>
+  {
+    start_date && (
+      <p class="date">
+        {formatDate(start_date)}
+        &ndash;
+        {end_date && formatDate(end_date)}
+      </p>
+    )
+  }
+</article>
+
+<style scoped>
+  p.date {
+    font-size: var(--font-size--small);
+    font-family: var(--font-family--monospace);
+  }
+
+  article + article {
+    padding-top: var(--spacing-m);
+  }
+</style>
