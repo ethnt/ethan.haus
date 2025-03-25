@@ -1,0 +1,18 @@
+---
+interface Props {
+  title?: string;
+}
+
+import favicon from "@/assets/favicon.svg";
+
+const { title = "Ethan Turkeltaub" } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/svg+xml" href={favicon.src} />
+
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
