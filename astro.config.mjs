@@ -7,10 +7,8 @@ import vercel from "@astrojs/vercel";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
+  site: "https://ethan.haus",
   adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
     imageService: true,
   }),
 });

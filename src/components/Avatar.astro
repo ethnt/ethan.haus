@@ -1,9 +1,11 @@
 ---
-import jpg from "../assets/img/beach.jpg";
+import webp from "@/assets/img/beach.jpg";
+import jpg from "@/assets/img/beach.jpg";
 
 const style = `
   background-image: url(${jpg.src});
   background-image: image-set(
+    "${webp.src}" type("image/webp"),
     "${jpg.src}" type("image/jpeg")
   );
 `;
