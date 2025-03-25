@@ -40,10 +40,16 @@
             tf
           ];
 
-          shellHook = ''
+          shellHook = let
+            secretToEnvironmentVariable = variableName: ''
+              export ${variableName}=$(sops -d --extract '["${variableName}"]' ./secrets.yaml)
+            '';
+          in ''
             export SOPS_AGE_KEY_FILE="/Users/$USER/.config/sops/age/keys.txt"
 
-            export VERCEL_API_TOKEN=$(sops -d --extract '["VERCEL_API_TOKEN"]' ./secrets.yaml)
+            ${secretToEnvironmentVariable "AWS_ACCESS_KEY_ID"}
+            ${secretToEnvironmentVariable "AWS_SECRET_ACCESS_KEY"}
+            ${secretToEnvironmentVariable "VERCEL_API_TOKEN"}
           '';
         };
       };

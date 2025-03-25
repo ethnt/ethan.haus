@@ -12,8 +12,9 @@
     "lint:css": "stylelint src/**/*.astro -i .gitignore",
     "lint:tf": "tf fmt -check",
     "lint:nix": "nixfmt --check *.nix",
-    "format": "pnpm format:prettier && pnpm format:nix",
+    "format": "pnpm format:prettier && pnpm format:tf && pnpm format:nix",
     "format:prettier": "prettier --write .",
+    "format:tf": "tf fmt",
     "format:nix": "nixfmt *.nix"
   },
   "dependencies": {
