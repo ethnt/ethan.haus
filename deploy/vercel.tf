@@ -14,3 +14,8 @@ resource "vercel_project" "ethan_haus" {
 
   preview_comments = false
 }
+
+resource "vercel_project_domain" "ethan_haus" {
+  project_id = vercel_project.ethan_haus.id
+  domain = "ethan.haus"
+}
