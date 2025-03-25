@@ -1,3 +1,4 @@
+/** @type {import('astro').AstroUserConfig} */
 // @ts-check
 import { defineConfig } from "astro/config";
 
