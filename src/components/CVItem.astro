@@ -29,11 +29,12 @@ const formatDate = (date: Date | null) => {
 </article>
 
 <style scoped>
-  article + article {
-    margin-top: var(--spacing-m);
-  }
-
   p.date {
     font-size: var(--font-size--small);
+    font-family: var(--font-family--monospace);
+  }
+
+  article + article {
+    padding-top: var(--spacing-m);
   }
 </style>

@@ -17,12 +17,31 @@ const { name } = Astro.props;
 
 <style scoped>
   section {
+    grid-column: span 24 / span 1;
     display: grid;
-    grid-template-columns: 3fr 6fr;
-    margin-top: var(--spacing-xl);
+    grid-template-columns: subgrid;
+
+    & > aside {
+      grid-column: span 24;
+      padding-bottom: var(--spacing-m);
+    }
+
+    & > div {
+      grid-column: span 24;
+    }
   }
 
-  section aside h2 {
+  @media (min-width: 760px) {
+    section > aside {
+      grid-column: span 6;
+    }
+
+    section > div {
+      grid-column: span 18;
+    }
+  }
+
+  h2 {
     color: var(--color--text--light);
   }
 </style>

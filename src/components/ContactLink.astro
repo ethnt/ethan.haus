@@ -11,14 +11,23 @@ const { label, url, text } = contact_link.data;
 ---
 
 <article>
-  <h3>{label}</h3>
-  <p><a href={url} target="_blank">{text}</a></p>
+  <aside>
+    <h3>{label}</h3>
+  </aside>
+  <section>
+    <p><a href={url} target="_blank">{text}</a></p>
+  </section>
 </article>
 
 <style scoped>
   article {
     display: grid;
-    grid-template-columns: 2fr 8fr;
+    grid-column: span 24 / span 1;
+    grid-template-columns: 6fr 18fr;
+  }
+
+  section {
+    font-family: var(--font-family--monospace);
   }
 
   h3 {

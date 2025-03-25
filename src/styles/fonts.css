@@ -1,4 +1,9 @@
 @font-face {
-  font-family: "Brunswick Grotesque";
-  src: url("/fonts/brunswick-grotesque/BrunswickGrotesque-Regular.woff2") format("woff2");
+  font-family: "ROM";
+  src: url("/fonts/rom/ABCROMVariable-Trial.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "ROM Mono";
+  src: url("/fonts/rom-mono/ABCROMMonoVariable-Trial.woff2") format("woff2");
 }

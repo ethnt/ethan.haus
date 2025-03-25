@@ -7,6 +7,7 @@ import { getCollection } from "astro:content";
 
 import ContactLink from "@/components/ContactLink.astro";
 import CVItem from "@/components/CVItem.astro";
+import RichContent from "@/components/RichContent.astro";
 import Avatar from "@/components/Avatar.astro";
 
 const experiences = (await getCollection("experiences")).sort((a, b) => {
@@ -25,9 +26,9 @@ const contact_links = await getCollection("contact_links");
 <Layout>
 	<Section name="About">
 		<Avatar />
-		<div class="content">
+		<RichContent>
 			<About />
-		</div>
+		</RichContent>
 	</Section>
 	<Section name="CV">
 		{experiences.map((experience) => <CVItem item={experience.data} />)}

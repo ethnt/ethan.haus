@@ -6,9 +6,10 @@
   --spacing-xl: calc(2.5 * var(--spacing));
   --spacing-xxl: calc(5 * var(--spacing));
 
-  --breakpoint: 1024px;
+  --max-width: 960px;
 
-  --font-family--sans-serif: "Brunswick Grotesque", Helvetica, Arial, sans-serif;
+  --font-family--sans-serif: "ROM", Helvetica, Arial, sans-serif;
+  --font-family--monospace: "ROM Mono", Helvetica, Arial, sans-serif;
 
   --font-size--base: 16px;
   --font-size--small: 14px;
@@ -20,7 +21,8 @@
 
   --line-height--base: 1.75;
 
-  --color--background: #f8f7f4;
+  --color--background--html: #ececec;
+  --color--background--body: #f6f6f6;
   --color--text: #3c3b43;
   --color--text--light: #8a8a8a;
   --color--text--lighter: #bfbfbf;

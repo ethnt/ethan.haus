@@ -1,0 +1,11 @@
+<div class="rich-content">
+  <slot />
+</div>
+
+<style is:global>
+  .rich-content {
+    p + p {
+      margin-top: var(--spacing-m);
+    }
+  }
+</style>
