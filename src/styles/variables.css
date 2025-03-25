@@ -6,11 +6,14 @@
   --spacing-xl: calc(2.5 * var(--spacing));
   --spacing-xxl: calc(5 * var(--spacing));
 
+  /* Breakpoints */
   --max-width: 960px;
 
-  --font-family--sans-serif: "ROM", Helvetica, Arial, sans-serif;
-  --font-family--monospace: "ROM Mono", Helvetica, Arial, sans-serif;
+  /* Font families */
+  --font-family--sans-serif: "ROM", helvetica, arial, sans-serif;
+  --font-family--monospace: "ROM Mono", helvetica, arial, sans-serif;
 
+  /* Font sizes */
   --font-size--base: 16px;
   --font-size--small: 14px;
   --font-size--larger: 20px;
@@ -19,8 +22,10 @@
   --font-weight--semibold: 500;
   --font-weight--bold: 600;
 
+  /* Line heights */
   --line-height--base: 1.75;
 
+  /* Colors */
   --color--background--html: #ececec;
   --color--background--body: #f6f6f6;
   --color--text: #3c3b43;
