@@ -10,6 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+        with:
+          cachix_auth_token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: nix develop --impure --command bash -c "pnpm astro check"
 
   lint:
@@ -17,6 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+        with:
+          cachix_auth_token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: nix develop --impure --command bash -c "pnpm lint"
 
   build:
@@ -24,4 +28,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+        with:
+          cachix_auth_token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: nix develop --impure --command bash -c "pnpm build"

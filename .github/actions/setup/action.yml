@@ -1,5 +1,9 @@
 name: Setup
 description: Sets up the workflow
+inputs:
+  cachix_auth_token:
+    description: Auth token for reading and writing to Cachix
+    required: true
 runs:
   using: composite
   steps:
@@ -8,5 +12,11 @@ runs:
         extra-conf: |
           system-features = big-parallel
           accept-flake-config = true
+    - uses: cachix/cachix-action@master
+      with:
+        authToken: ${{ inputs.cachix_auth_token }}
+        installCommand: nix profile install github:NixOS/nixpkgs/nixpkgs-unstable#cachix
+        extraPullNames: ethan-haus
+        name: ethan-haus
     - run: nix develop --impure --command bash -c "pnpm install --frozen-lockfile"
       shell: bash

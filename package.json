@@ -7,11 +7,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "pnpm lint:js && pnpm lint:css && pnpm lint:tf",
+    "lint": "pnpm lint:js && pnpm lint:css && pnpm lint:nix && pnpm lint:tf",
     "lint:js": "prettier --check . && eslint .",
     "lint:css": "stylelint src/**/*.astro -i .gitignore",
     "lint:tf": "tf fmt -check",
-    "format": "prettier --write ."
+    "lint:nix": "nixfmt --check *.nix",
+    "format": "pnpm format:prettier && pnpm format:nix",
+    "format:prettier": "prettier --write .",
+    "format:nix": "nixfmt *.nix"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
