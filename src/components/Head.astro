@@ -1,18 +1,32 @@
 ---
 interface Props {
   title?: string;
+  description?: string;
 }
 
 import favicon from "@/assets/favicon.svg";
 
-const { title = "Ethan Turkeltaub" } = Astro.props;
+const {
+  title = "Ethan Turkeltaub",
+  description = "The personal website of Brooklyn-based software engineer Ethan Turkeltaub",
+} = Astro.props;
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 
-<link rel="icon" type="image/svg+xml" href={favicon.src} />
+<meta name="description" content={description} />
 
 <meta name="generator" content={Astro.generator} />
+
+<meta property="og:url" content={Astro.url} />
+
+<meta property="og:title" content={title} />
+<meta property="twitter:title" content={title} />
+
+<meta property="og:description" content={description} />
+<meta property="twitter:description" content={description} />
+
+<link rel="icon" type="image/svg+xml" href={favicon.src} />
 
 <title>{title}</title>
