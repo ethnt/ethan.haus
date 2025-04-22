@@ -1,8 +1,15 @@
 [
   {
+    "id": "zocdoc",
+    "name": "Zocdoc",
+    "description": "Senior Software Engineer",
+    "url": "https://zocdoc.com",
+    "start_date": "2025-04-28"
+  },
+  {
     "id": "stripe",
     "name": "Stripe",
-    "description": "Software Engineer",
+    "description": "Senior Software Engineer",
     "url": "https://stripe.com",
     "start_date": "2021-01-11",
     "end_date": "2025-01-20"

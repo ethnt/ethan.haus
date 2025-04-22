@@ -2,6 +2,7 @@
 interface Props {
   title?: string;
   description?: string;
+  index?: boolean;
 }
 
 import favicon from "@/assets/favicon.svg";
@@ -9,6 +10,7 @@ import favicon from "@/assets/favicon.svg";
 const {
   title = "Ethan Turkeltaub",
   description = "The personal website of Brooklyn-based software engineer Ethan Turkeltaub",
+  index = true,
 } = Astro.props;
 ---
 
@@ -28,5 +30,7 @@ const {
 <meta property="twitter:description" content={description} />
 
 <link rel="icon" type="image/svg+xml" href={favicon.src} />
+
+{!index && <meta name="robots" content="noindex" />}
 
 <title>{title}</title>
