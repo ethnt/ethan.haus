@@ -5,6 +5,6 @@ export default [
   eslintConfigPrettier,
   ...eslintPluginAstro.configs.recommended,
   {
-    rules: {},
-  },
+    rules: {}
+  }
 ];
