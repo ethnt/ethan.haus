@@ -6,24 +6,24 @@ const cvItemSchema = z.object({
   description: z.string(),
   url: z.string(),
   start_date: z.coerce.date().optional(),
-  end_date: z.coerce.date().optional().nullable(),
+  end_date: z.coerce.date().optional().nullable()
 });
 
 export type CVItem = z.infer<typeof cvItemSchema>;
 
 const experiences = defineCollection({
   loader: file("src/content/data/experiences.json"),
-  schema: cvItemSchema,
+  schema: cvItemSchema
 });
 
 const educations = defineCollection({
   loader: file("src/content/data/educations.json"),
-  schema: cvItemSchema,
+  schema: cvItemSchema
 });
 
 const projects = defineCollection({
   loader: file("src/content/data/projects.json"),
-  schema: cvItemSchema,
+  schema: cvItemSchema
 });
 
 const contact_links = defineCollection({
@@ -31,8 +31,8 @@ const contact_links = defineCollection({
   schema: z.object({
     label: z.string(),
     url: z.string(),
-    text: z.string(),
-  }),
+    text: z.string()
+  })
 });
 
 export const collections = { experiences, educations, projects, contact_links };

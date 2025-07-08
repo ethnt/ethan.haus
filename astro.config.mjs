@@ -9,6 +9,6 @@ export default defineConfig({
   output: "static",
   site: "https://ethan.haus",
   adapter: vercel({
-    imageService: true,
-  }),
+    imageService: true
+  })
 });
